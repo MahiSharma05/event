@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+  <body>
+     <h1>Q1- Attach a click event to a button using a function that displays an alert.</h1>
+    <button id="mybutton">click me</button>
+    <script>
+        function showAlert() {
+            alert('button clicked');
+        }
+        document.getElementById('mybutton').addEventListener('click',showAlert);
+    </script>
+
+    <h1>Q2- change the background color of a div to blue when the mouse hovers over it.</h1>
+    <div id="colordiv" style="width: 100px; height: 100px; background: red;"></div>
+    <script>
+        function changeToBlue(){
+            document.getElementById('colordiv').style.backgroundColor = 'blue';
+        }
+        document.getElementById('colordiv').addEventListener('mouseover', changeToBlue);
+    </script>
+
+     <h1>Q3-log the pressed to the console when a key is pressed.</h1> 
+       <input type="text" placeholder="type something...">
+       <script>
+        function logkey(event){
+            console.log('key pressed',event.key);
+        }
+        document.addEventListener('keydown',logkey);
+       </script>
+
+       <h1>Q4- changne the text of a paragraph when it is doblle clicked</h1>
+       <p id="myParagraph">double clicked me to change my text</p>
+       <script>
+        function changeText(){
+            document.getElementById('myParagraph').textContent = 'text has been changed!';
+        }
+        document.getElementById('myParagraph').addEventListener('dblclick',changeText);
+       </script>
+
+       <H1>Q5-Prevent a form from being submitted and display an instead</H1>
+       <form id="myform"><input type="text" placeholder="enter something...">
+        <button type="submit">submit</button>
+    </form>
+    <script>
+        function preventSubmission(event){
+            event.preventDefault();
+            alert('form submission prevented');
+        }
+        document.getElementById('myform').addEventListener('submit',preventSubmission);
+    </script>
+    
+</body>
+</html>
